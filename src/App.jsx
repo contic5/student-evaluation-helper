@@ -151,6 +151,7 @@ function App()
   const information_html=(
     <>
     <h1>Student Evaluation Helper</h1>
+    <h3>For Spectrum Works</h3>
     <h2>Steps</h2>
     <ol>
     <li>Copy all text from a Student Evaluation</li>
@@ -158,7 +159,6 @@ function App()
     <li>View the results</li>
     </ol>
 
-    <h3>For Spectrum Works</h3>
     <h2>Main Idea</h2>
     <p>
     This website automatically calculates the overall average score and each category average score.
