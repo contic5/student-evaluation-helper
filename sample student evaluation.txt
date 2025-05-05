@@ -1,0 +1,99 @@
+	
+Employee Evaluation Form 
+Employee Information
+Name:		Evaluation Date:	
+Training Period:		Department:	
+Program Director:		Supervisor:	
+Ratings
+	1 = Below Expectations	2 = Almost Meets Expectations	3 = Meets Expectations	4 = Above Expectations	N/A	
+Ability to Learn		
+Operates with an outlook to improve long-term performance 	☒
+☐
+☐
+☐
+☐
+
+Understands and respects work time vs break time 	☐
+☒
+☐
+☐
+☐
+
+Follows policies and procedures  	☐
+☐
+☒
+☐
+☐
+
+Communication  		
+Communicates clearly and succinctly	☐
+☐
+☐
+☒
+☐
+
+Ask for assistance when appropriate  	☒
+☐
+☐
+☐
+☐
+
+Skills & Outputs 		
+Delivers accurate and complete work product 	☐
+☒
+☐
+☐
+☐
+
+Uses tools responsibly and effectively 	☐
+☐
+☒
+☐
+☐
+
+Integrity 		
+Consciously considers the impact his/her actions may have on others	☐
+☐
+☐
+☒
+☐
+
+Takes full accountability for his/her actions and results 	☒
+☐
+☐
+☐
+☐
+
+Teamwork & Collaboration 						
+Works well with others 	☐
+☒
+☐
+☐
+☐
+
+Ready and willing to take on a task 	☐
+☐
+☒
+☒
+☐
+
+Presence & Reliability 		
+Punctuality and Attendance 	☒
+☐
+☐
+☐
+☐
+
+Overall Rating (Average rating number)   	
+Evaluation 
+
+
+
+
+
+
+Verification of Review
+
+Employee Signature		Date	
+Manager Signature		Date	
+
