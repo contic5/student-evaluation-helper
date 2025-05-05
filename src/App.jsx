@@ -148,18 +148,44 @@ function App()
   const [category_score_elements,setCategoryScoreElements]=useState();
   const [average_score,setAverageScore]=useState();
 
+  const information_html=(
+    <>
+    <h1>Student Evaluation Helper</h1>
+    <h2>Steps</h2>
+    <ol>
+    <li>Copy all text from a Student Evaluation</li>
+    <li>Paste all of the text into the textbox</li>
+    <li>View the results</li>
+    </ol>
+
+    <h3>For Spectrum Works</h3>
+    <h2>Main Idea</h2>
+    <p>
+    This website automatically calculates the overall average score and each category average score.
+    This lets job coaches know where students are excelling and where they need improvement.
+    This is very useful. This should help with calculating the results.
+    </p>
+    <h2>Steps</h2>
+    <ol>
+    <li>Copy <b>all text</b> from a Student Evaluation</li>
+    <li>Copy by using Control-A and Control-C</li>
+    <li>Paste all of the text into the textbox</li>
+    <li>View the results</li>
+    </ol>
+    <h2>Key Results</h2>
+    <ul>
+    <li>Overall Average Score</li>
+    <li>Category Average Scores</li>
+    <li>Topic Score</li>
+    </ul>
+    </>
+  );
+
   if(!document_html)
   {
     return (
       <>
-        <h1>Student Evaluation Helper</h1>
-        <h2>Steps</h2>
-        <ol>
-        <li>Copy all text from a Student Evaluation</li>
-        <li>Paste all of the text into the textbox</li>
-        <li>View the results</li>
-        </ol>
-
+        {information_html}
         <label htmlFor="document_text">Paste Document Text Here</label>
         <textarea id="document_text" onChange={handleDocumentText} value={document_text} rows={8} cols={40}></textarea>
         <h2>Add your Document to see Results</h2>
@@ -168,29 +194,8 @@ function App()
   }
 
   return (
-    <>
-      <h1>Student Evaluation Helper</h1>
-      <h3>For Spectrum Works</h3>
-      <h2>Main Idea</h2>
-      <p>
-      This website automatically calculates the overall average score and each category average score.
-      This lets job coaches know where students are excelling and where they need improvement.
-      This is very useful. This should help with calculating the results.
-      </p>
-      <h2>Steps</h2>
-      <ol>
-      <li>Copy <b>all text</b> from a Student Evaluation</li>
-      <li>Copy by using Control-A and Control-C</li>
-      <li>Paste all of the text into the textbox</li>
-      <li>View the results</li>
-      </ol>
-      <h2>Key Results</h2>
-      <ul>
-      <li>Overall Average Score</li>
-      <li>Category Average Scores</li>
-      <li>Topic Score</li>
-      </ul>
-
+    <>      
+      {information_html}
       <label htmlFor="document_text">Paste Document Text Here</label>
       <textarea id="document_text" onChange={handleDocumentText} value={document_text} rows={8} cols={40}></textarea>
       <h2>Average Score: {average_score}</h2>
