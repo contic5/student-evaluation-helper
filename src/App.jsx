@@ -50,7 +50,10 @@ function App()
     }
     console.log(category_arr);
 
-    let new_category_score_elements=category_arr.map(category_dict => <h3 key={category_dict.category}> {category_dict.category}: {category_dict.average_score}</h3>);
+    const score_meanings=["Below Expectations","Almost Meets","Meets Expectations","Above Expectations","Literally Perfect Score"];
+    let new_category_score_elements=category_arr.map(category_dict => (
+    <h3 key={category_dict.category}>{category_dict.category}: {category_dict.average_score} {score_meanings[Math.floor(category_dict.average_score)]}</h3>)
+    );
     setCategoryScoreElements(new_category_score_elements);
   }
   function calculate_score(topic_arr)
@@ -72,13 +75,8 @@ function App()
     setAverageScore(new_average_score);
 
   }
-  function read_document(new_document_text_cleaned)
+  function read_scores(lines)
   {
-    let lines=new_document_text_cleaned.split("<br>");
-    lines=lines.map(line => line.replace("\t",""));
-    lines=lines.map(line => line.trim());
-
-
     let topic_arr=[];
     let line_number=0;
     let category="";
@@ -128,6 +126,37 @@ function App()
     calculate_score(topic_arr);
     calculate_category_results(topic_arr);
   }
+  function read_words(lines)
+  {
+    const END_LINE=lines.length-1;
+    let line_number=0;
+    for(let line of lines)
+    {
+      if(line_number>50&&line.includes("Evaluation"))
+      {
+        break;
+      }
+      line_number+=1;
+    }
+    let total_words=0;
+    while(line_number<END_LINE)
+    {
+      const words=lines[line_number].split(" ");
+      total_words+=words.length;
+      line_number+=1;
+    }
+    setTotalWords(total_words);
+  }
+  function read_document(new_document_text_cleaned)
+  {
+    let lines=new_document_text_cleaned.split("<br>");
+    lines=lines.map(line => line.replace("\t",""));
+    lines=lines.map(line => line.trim());
+
+    read_scores(lines);
+    read_words(lines);
+    
+  }
   function handleDocumentText(e)
   {
     let new_document_text=e.target.value;
@@ -147,6 +176,7 @@ function App()
   const [score_elements,setScoreElements]=useState();
   const [category_score_elements,setCategoryScoreElements]=useState();
   const [average_score,setAverageScore]=useState();
+  const [total_words,setTotalWords]=useState(0);
 
   const information_html=(
     <>
@@ -163,7 +193,6 @@ function App()
     <p>
     This website automatically calculates the overall average score and each category average score.
     This lets job coaches know where students are excelling and where they need improvement.
-    This is very useful. This should help with calculating the results.
     </p>
     <h2>Steps</h2>
     <ol>
@@ -198,6 +227,7 @@ function App()
       {information_html}
       <label htmlFor="document_text">Paste Document Text Here</label>
       <textarea id="document_text" onChange={handleDocumentText} value={document_text} rows={8} cols={40}></textarea>
+      <h2>Total Words in Evaluation: {total_words}</h2>
       <h2>Average Score: {average_score}</h2>
       <h2>Category Scores</h2>
       {category_score_elements}
