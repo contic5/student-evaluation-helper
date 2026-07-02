@@ -215,7 +215,7 @@ function App()
     return (
       <>
         {information_html}
-        <label htmlFor="document_text">Paste Document Text Here</label>
+        <label htmlFor="document_text" className="important_text">Paste Document Text Here</label>
         <textarea id="document_text" onChange={handleDocumentText} value={document_text} rows={8} cols={40}></textarea>
         <h2>Add your Document to see Results</h2>
       </>
@@ -225,7 +225,7 @@ function App()
   return (
     <>      
       {information_html}
-      <label htmlFor="document_text">Paste Document Text Here</label>
+      <label htmlFor="document_text" className="important_text">Paste Document Text Here</label>
       <textarea id="document_text" onChange={handleDocumentText} value={document_text} rows={8} cols={40}></textarea>
       <h2>Total Words in Evaluation: {total_words}</h2>
       <h2>Average Score: {average_score}</h2>
